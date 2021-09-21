@@ -7,7 +7,7 @@ class Herencia extends Caja
 
     function cierre()
     {
-        $llamar_clase = new Caja()
+        $llamar_clase = new Caja();
         $obtener_numero = $llamar_clase->getNumero();
         echo $obtener_numero;
     }
