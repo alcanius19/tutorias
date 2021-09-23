@@ -3,27 +3,23 @@
 class Conexion
 {
 
-    public $localhost;
-    public $username;
-    public $password;
-    public $dbname;
-    public $database;
+    public $database  = 'mysql';
+    public $localhost = 'localhost';
+    public $username  = 'root';
+    public $password  = '';
+    public $dbname    = 'restaurante';
 
-    public function __construct()
-    {
-        $this->database = 'mysql';
-        $this->localhost = 'localhost';
-        $this->username = 'root';
-        $this->password = '';
-        $this->dbname = 'restaurante';
-    }
 
-    function conectar()
+
+    static public function conectar()
     {
 
-        $con = new PDO("mysql:dbname=" . $this->dbname . ";host=" . "$this->localhost", $this->username, $this->password);
+        $con
+            = new PDO(
+                "mysql:host=localhost;dbname=tienda",
+                "root",
+                ""
+            );
         return $con;
     }
 }
-$llamar_clase = new Conexion();
-$llamar_clase->conectar();
