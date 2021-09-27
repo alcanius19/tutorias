@@ -17,23 +17,29 @@ $datos = new verDatos();
 
 <body>
 
-    <select name="" id="">
-        <?php foreach ($datos::ver() as $value) {
-            echo "<option>" . $value['nombre'] . "</option>";
-        } ?>
+    <table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Cargo</th>
+        <th>fecha entrada</th>
 
+    </tr>
 
-    </select>
+    </thead>
+    <tbody>
+    <?php  foreach ($datos::ver() as  $value): 
 
-    <select name="" id="">
-        <?php foreach ($datos::ver() as $value) {
+       echo  "<tr>
+            <td>".$value['nombre']."</td>
+       </tr>";  
+        ?>  
+<?php endforeach  ?>
 
-            echo "<option>" . $value['cargo'] . "</option>";
+    </tbody>
 
-        } ?>
+    </table>
 
-
-    </select>
 
 
 </body>
