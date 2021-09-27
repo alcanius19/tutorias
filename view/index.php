@@ -28,7 +28,8 @@ $datos = new verDatos();
     <select name="" id="">
         <?php foreach ($datos::ver() as $value) {
 
-            echo "<option>" . $value['cargo'] . "</option>";
+            echo "<option>" . $value['cargo'] . "</option>"
+
         } ?>
 
 
