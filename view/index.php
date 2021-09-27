@@ -16,30 +16,33 @@ $datos = new verDatos();
 </head>
 
 <body>
-
+    <!-- realizar el formulario con el metodo POST para el envio de datos -->
     <table>
-    <thead>
-    <tr>
-        <th>Nombre</th>
-        <th>Cargo</th>
-        <th>fecha entrada</th>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cargo</th>
+                <th>fecha entrada</th>
 
-    </tr>
+            </tr>
 
-    </thead>
-    <tbody>
-    <?php  foreach ($datos::ver() as  $value): 
+        </thead>
+        <tbody>
+            <?php foreach ($datos::ver() as  $value) :
 
-       echo  "<tr>
-            <td>".$value['nombre']."</td>
-       </tr>";  
-        ?>  
-<?php endforeach  ?>
+                echo  "<tr>
+            <td>" . $value['nombre'] . "</td>
+              <td>" . $value['cargo'] . "</td>
+             <td>" . $value['fecha_ingreso'] . "</td>
+              <td><a href=" . $value['id'] . ">editar</a></td>
+       </tr>";
+            ?>
 
-    </tbody>
+            <?php endforeach  ?>
+
+        </tbody>
 
     </table>
-
 
 
 </body>

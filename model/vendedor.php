@@ -14,4 +14,14 @@ class Vendedor
         $datos = $query->fetchAll();
         return $datos;
     }
+
+     public function EditarDatos($id)
+    {
+
+        $sql = "SELECT * FROM vendedor WHERE id = $id";
+        $query = Conexion::conectar()->prepare($sql);
+        $query->execute();
+        $datos = $query->fetchAll();
+        return $datos;
+    }
 }
