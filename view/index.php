@@ -17,6 +17,7 @@ $datos = new verDatos();
 
 <body>
     <!-- realizar el formulario con el metodo POST para el envio de datos -->
+
     <table>
         <thead>
             <tr>
@@ -28,21 +29,22 @@ $datos = new verDatos();
 
         </thead>
         <tbody>
-            <?php foreach ($datos::ver() as  $value) :
+            <?php foreach ($datos::ver() as  $value) : ?>
+                <tr>
+                    <td><?php echo $value['nombre']  ?></td>
+                    <td><?php echo $value['cargo']  ?></td>
+                    <td><?php echo $value['fecha_ingreso']  ?></td>
+                    <td><a href="../controller/editarDatos.php?id=<?php echo $value['id'] ?>">Editar</a></td>
+                </tr>
 
-                echo  "<tr>
-            <td>" . $value['nombre'] . "</td>
-              <td>" . $value['cargo'] . "</td>
-             <td>" . $value['fecha_ingreso'] . "</td>
-              <td><a href=" . $value['id'] . ">editar</a></td>
-       </tr>";
-            ?>
+
 
             <?php endforeach  ?>
 
         </tbody>
 
     </table>
+
 
 
 </body>
